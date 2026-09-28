@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AYJ — DIY Electronics Projects</title>
+  <meta name="description" content="AYJ (Gaurav Yash Jain) — easy DIY electronics projects you can build at home with inexpensive parts. Video tutorials, parts lists and circuit diagrams. To inspire the curious.">
+  <meta name="theme-color" content="#05080d">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://ayjtech.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AYJ">
+  <meta property="og:title" content="AYJ — DIY Electronics Projects">
+  <meta property="og:description" content="Easy electronics projects you can build at home. Video tutorials, parts lists and circuit diagrams. To inspire the curious.">
+  <meta property="og:url" content="https://ayjtech.github.io/">
+  <meta property="og:image" content="https://ayjtech.github.io/assets/img/ayj-circuit.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Brand mark, reused in header and footer -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ayj-mark" viewBox="0 0 108 40">
+      <path fill="currentColor" fill-rule="evenodd" d="M1 38 L19 2 L37 38 Z M13.5 32 L19 21 L24.5 32 Z"/>
+      <path fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" d="M42 2 L55 19 L68 2 M55 19 V38"/>
+      <path fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" d="M100.5 2 V34.5 H76 V25"/>
+      <path fill="none" stroke="var(--bg, #05080d)" stroke-width="1.2" d="M100.5 4 V34.5 H78"/>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#projects">Skip to projects</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner wrap">
+      <a class="brand" href="#top" aria-label="AYJ home">
+        <svg class="brand__mark" aria-hidden="true"><use href="#ayj-mark"/></svg>
+        <span class="brand__sub">To Inspire<br>The Curious</span>
+      </a>
+      <nav class="nav__links" id="nav-links" aria-label="Main">
+        <a href="#projects">Projects</a>
+        <a href="#diagrams">Circuit Diagrams</a>
+        <a href="#parts">Parts Bin</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="btn btn--yt nav__cta" href="https://www.youtube.com/@gauravyashjain?sub_confirmation=1" target="_blank" rel="noopener">
+        <span class="led led--red" aria-hidden="true"></span> Subscribe
+      </a>
+      <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <canvas class="hero__canvas" id="traces" aria-hidden="true"></canvas>
+      <div class="hero__inner wrap">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="led led--green" aria-hidden="true"></span> DIY electronics · since 2012</p>
+          <h1 class="hero__title">
+            Build circuits.<br>
+            <span class="hl">Stay curious.</span>
+          </h1>
+          <p class="hero__lede">
+            AYJ makes easy, step-by-step electronics projects you can build at home with inexpensive components —
+            sensors, switches, alarms and timers, each with a parts list and circuit diagram.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects">Explore projects
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="https://www.youtube.com/@gauravyashjain" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-yt"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8Z"/><path class="ico-yt__play" d="m10 15 5.2-3L10 9v6Z"/></svg>
+              Watch on YouTube
+            </a>
+          </div>
+          <dl class="readout" id="readout">
+            <div><dt>Subscribers</dt><dd data-count="20200">20.2K</dd></div>
+            <div><dt>Views</dt><dd data-count="4367306">4.37M</dd></div>
+            <div><dt>Projects</dt><dd data-count="16">16</dd></div>
+            <div><dt>Diagrams</dt><dd data-count="7">7</dd></div>
+          </dl>
+        </div>
+
+        <aside class="scope" aria-label="Most watched project">
+          <div class="scope__bar">
+            <span class="scope__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="mono">CH1 · MOST WATCHED</span>
+            <span class="mono scope__trig">▲ TRIG</span>
+          </div>
+          <a class="scope__screen" id="featured" href="#project/mobile-phone-detector">
+            <img src="https://i.ytimg.com/vi/xW-hXU7MWnM/hqdefault.jpg" alt="" width="480" height="360">
+            <span class="scope__grid" aria-hidden="true"></span>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+          </a>
+          <div class="scope__meta">
+            <div>
+              <p class="mono dim">P16 · CA3130 · BC548</p>
+              <p class="scope__title">Mobile Phone Detector</p>
+            </div>
+            <p class="scope__views mono"><strong>1.18M</strong> views</p>
+          </div>
+          <svg class="scope__wave" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 30 H20 V10 H60 V30 H100 V10 H140 V30 H180 V10 H220 V30 H260 V10 H300 V30 H340 V10 H380 V30 H400"/>
+          </svg>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <header class="sec-head">
+          <span class="ref">U1</span>
+          <h2>Projects</h2>
+          <span class="sec-head__trace" aria-hidden="true"></span>
+        </header>
+        <p class="sec-sub">Every video from the channel, with the full list of things you need. Tap a project to watch it and see the parts and circuit diagram.</p>
+
+        <div class="toolbar">
+          <label class="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+            <span class="sr">Search projects</span>
+            <input id="search" type="search" placeholder="Search — try “555” or “LDR”" autocomplete="off">
+          </label>
+          <label class="sort">
+            <span class="sr">Sort</span>
+            <select id="sort">
+              <option value="new">Newest first</option>
+              <option value="views">Most viewed</option>
+              <option value="old">Oldest first</option>
+            </select>
+          </label>
+        </div>
+        <div class="chips" id="chips" role="toolbar" aria-label="Filter by category"></div>
+        <p class="filter-note" id="filter-note" hidden></p>
+
+        <div class="grid" id="grid" aria-live="polite"></div>
+        <p class="empty" id="empty" hidden>No projects match. <button class="linkbtn" id="clear-filters">Clear filters</button></p>
+      </div>
+    </section>
+
+    <!-- ============ DIAGRAMS ============ -->
+    <section class="section section--alt" id="diagrams">
+      <div class="wrap">
+        <header class="sec-head">
+          <span class="ref">J2</span>
+          <h2>Circuit Diagrams</h2>
+          <span class="sec-head__trace" aria-hidden="true"></span>
+        </header>
+        <p class="sec-sub">The schematics AYJ published on Facebook, shown blueprint-style. Open one for the full-size original.</p>
+        <div class="dgrid" id="dgrid"></div>
+        <p class="more"><a href="https://www.facebook.com/media/set/?set=a.337503066371509&type=3" target="_blank" rel="noopener">See the album on Facebook ↗</a></p>
+      </div>
+    </section>
+
+    <!-- ============ PARTS BIN ============ -->
+    <section class="section" id="parts">
+      <div class="wrap">
+        <header class="sec-head">
+          <span class="ref">R3</span>
+          <h2>Parts Bin</h2>
+          <span class="sec-head__trace" aria-hidden="true"></span>
+        </header>
+        <p class="sec-sub">Got a BC547 or a 555 lying around? Pick a part to see every project that uses it.</p>
+        <div class="bins" id="bins"></div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section section--alt" id="about">
+      <div class="wrap about">
+        <div class="about__media">
+          <img src="assets/img/ayj-components.jpg" alt="The AYJ logo over a pile of resistors, capacitors, ICs and wires" width="900" height="900" loading="lazy">
+        </div>
+        <div class="about__copy">
+          <header class="sec-head">
+            <span class="ref">D4</span>
+            <h2>About AYJ</h2>
+            <span class="sec-head__trace" aria-hidden="true"></span>
+          </header>
+          <blockquote class="about__quote">
+            “We are obsessed with the world of electronics. We remain intrigued by the mystery involved in electronics.
+            Thus, we have created this channel to help others and make them understand how to make interesting electronic
+            projects at home easily by using inexpensive electronic components.”
+          </blockquote>
+          <dl class="specs">
+            <div><dt>Channel</dt><dd>Gaurav Yash Jain – AYJ</dd></div>
+            <div><dt>On air since</dt><dd>15 Oct 2012</dd></div>
+            <div><dt>Subscribers</dt><dd>20.2K</dd></div>
+            <div><dt>Total views</dt><dd>4,367,306</dd></div>
+            <div><dt>Facebook</dt><dd>1.2K followers</dd></div>
+            <div><dt>Motto</dt><dd>To inspire the curious…</dd></div>
+          </dl>
+          <div class="about__links">
+            <a class="btn btn--yt" href="https://www.youtube.com/@gauravyashjain?sub_confirmation=1" target="_blank" rel="noopener">
+              <span class="led led--red" aria-hidden="true"></span> Subscribe on YouTube
+            </a>
+            <a class="btn btn--ghost" href="https://www.facebook.com/ayjgauravyashjain" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-fb"><path d="M14 8h3V4.5h-3c-2.5 0-4 1.7-4 4.2V11H7.5v3.5H10V21h3.5v-6.5h3l.5-3.5h-3.5V9c0-.6.4-1 1-1Z"/></svg>
+              Follow on Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <svg class="brand__mark" aria-hidden="true"><use href="#ayj-mark"/></svg>
+      </a>
+      <p class="footer__tag mono">To inspire the curious…</p>
+      <nav class="footer__links" aria-label="Social">
+        <a href="https://www.youtube.com/@gauravyashjain" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.facebook.com/ayjgauravyashjain" target="_blank" rel="noopener">Facebook</a>
+        <a href="#top">Back to top ↑</a>
+      </nav>
+      <p class="footer__fine mono dim">© 2012–<span id="year">2026</span> AYJ · Channel stats as of September 2026 · Always take care when working with electricity.</p>
+    </div>
+  </footer>
+
+  <!-- ============ PROJECT MODAL ============ -->
+  <dialog class="modal" id="modal" aria-labelledby="m-title">
+    <div class="modal__frame">
+      <header class="modal__head">
+        <div>
+          <p class="mono dim" id="m-ref"></p>
+          <h2 id="m-title"></h2>
+          <p class="modal__meta mono" id="m-meta"></p>
+        </div>
+        <button class="iconbtn" id="m-close" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+      <div class="modal__body">
+        <div class="modal__main">
+          <div class="player" id="m-player"></div>
+          <p class="modal__summary" id="m-summary"></p>
+          <div class="notes" id="m-notes"></div>
+          <figure class="modal__diagram" id="m-diagram"></figure>
+        </div>
+        <aside class="bom" id="m-bom" aria-label="Things you need"></aside>
+      </div>
+      <footer class="modal__foot">
+        <button class="btn btn--ghost btn--sm" id="m-prev">← Prev</button>
+        <a class="btn btn--yt btn--sm" id="m-yt" target="_blank" rel="noopener">Open on YouTube ↗</a>
+        <button class="btn btn--ghost btn--sm" id="m-next">Next →</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <!-- ============ DIAGRAM LIGHTBOX ============ -->
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+    <div class="lightbox__frame">
+      <header class="lightbox__head">
+        <h2 id="lb-title"></h2>
+        <div class="lightbox__tools">
+          <div class="seg" role="group" aria-label="View style">
+            <button id="lb-blue" aria-pressed="true">Blueprint</button>
+            <button id="lb-orig" aria-pressed="false">Original</button>
+          </div>
+          <button class="iconbtn" id="lb-close" aria-label="Close">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+      </header>
+      <div class="lightbox__stage" id="lb-stage">
+        <div class="bp is-blue" id="lb-bp"><img id="lb-img" alt=""></div>
+      </div>
+      <footer class="lightbox__foot">
+        <span class="mono dim" id="lb-hint">Tap the diagram to zoom</span>
+        <span class="lightbox__links">
+          <a id="lb-project" href="#">Open project</a>
+          <a id="lb-fb" target="_blank" rel="noopener">View on Facebook ↗</a>
+          <a id="lb-dl" download>Download</a>
+        </span>
+      </footer>
+    </div>
+  </dialog>
+
+  <noscript><p class="noscript">This site needs JavaScript to list projects. You can watch every video on <a href="https://www.youtube.com/@gauravyashjain">YouTube</a>.</p></noscript>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
