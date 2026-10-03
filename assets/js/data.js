@@ -1,6 +1,6 @@
 /*
- * AYJ site content.
- * Videos, stats and parts lists come from youtube.com/@gauravyashjain;
+ * AYJ Labs site content.
+ * Videos, stats and parts lists come from youtube.com/@ayjlabs;
  * circuit diagrams come from the "Circuit Diagrams" album on facebook.com/ayjgauravyashjain.
  * To add a project, add an entry to `projects` (newest first) — the page builds itself from this file.
  *
@@ -8,22 +8,23 @@
  */
 window.AYJ = {
   channel: {
-    name: "Gaurav Yash Jain - AYJ",
-    handle: "@gauravyashjain",
-    tagline: "To Inspire The Curious…",
+    name: "AYJ Labs",
+    formerly: "Gaurav Yash Jain - AYJ",
+    handle: "@ayjlabs",
+    tagline: "Build. Test. Learn.",
     description:
       "We are obsessed with the world of electronics and remain intrigued by the mystery involved in it. We created this channel to help others understand how to make interesting electronic projects at home, easily, using inexpensive electronic components.",
-    youtube: "https://www.youtube.com/@gauravyashjain",
-    subscribe: "https://www.youtube.com/@gauravyashjain?sub_confirmation=1",
+    youtube: "https://www.youtube.com/@ayjlabs",
+    subscribe: "https://www.youtube.com/@ayjlabs?sub_confirmation=1",
     facebook: "https://www.facebook.com/ayjgauravyashjain",
     diagramsAlbum: "https://www.facebook.com/media/set/?set=a.337503066371509&type=3",
     joined: "2012-10-15",
     stats: {
       subscribers: 20200,
-      views: 4367306,
+      views: 4368343,
       videos: 16,
       facebookFollowers: 1200,
-      asOf: "September 2026"
+      asOf: "October 2026"
     }
   },
 
@@ -319,7 +320,7 @@ window.AYJ = {
       likes: 39,
       cats: ["basics"],
       summary:
-        "Getting to know the light-emitting diode — the part that turns up in almost every AYJ project."
+        "Getting to know the light-emitting diode — the part that turns up in almost every AYJ Labs project."
     },
     {
       slug: "water-sensor",
@@ -365,7 +366,7 @@ window.AYJ = {
         { q: 1, n: "Breadboard", k: "BREADBOARD" }
       ],
       notes: [
-        "Correction from AYJ: in the video's audio, LED is mistakenly expanded as “Light Dependent Resistor”. It stands for Light Emitting Diode."
+        "Correction from AYJ Labs: in the video's audio, LED is mistakenly expanded as “Light Dependent Resistor”. It stands for Light Emitting Diode."
       ]
     },
     {
@@ -445,7 +446,7 @@ window.AYJ = {
       likes: 501,
       cats: ["switching", "ics", "sensors"],
       summary:
-        "Where it all started — AYJ's first video. An electret mic, two BC547s and an NE555 timer turn an LED on with a clap.",
+        "Where it all started — the channel's first video. An electret mic, two BC547s and an NE555 timer turn an LED on with a clap.",
       parts: [
         { q: 2, n: "BC547 Transistor", k: "BC547" },
         { q: 1, n: "NE555 Chip", k: "NE555" },

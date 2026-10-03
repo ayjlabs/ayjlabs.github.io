@@ -3,35 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>AYJ — DIY Electronics Projects</title>
-  <meta name="description" content="AYJ (Gaurav Yash Jain) — easy DIY electronics projects you can build at home with inexpensive parts. Video tutorials, parts lists and circuit diagrams. To inspire the curious.">
+  <title>AYJ Labs — DIY Electronics Projects</title>
+  <meta name="description" content="AYJ Labs — build, test, learn. Easy DIY electronics projects you can make at home with inexpensive parts: video tutorials, parts lists and circuit diagrams.">
   <meta name="theme-color" content="#05080d">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://ayjtech.github.io/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="AYJ">
-  <meta property="og:title" content="AYJ — DIY Electronics Projects">
-  <meta property="og:description" content="Easy electronics projects you can build at home. Video tutorials, parts lists and circuit diagrams. To inspire the curious.">
+  <meta property="og:site_name" content="AYJ Labs">
+  <meta property="og:title" content="AYJ Labs — DIY Electronics Projects">
+  <meta property="og:description" content="Easy electronics projects you can build at home. Video tutorials, parts lists and circuit diagrams. Build. Test. Learn.">
   <meta property="og:url" content="https://ayjtech.github.io/">
-  <meta property="og:image" content="https://ayjtech.github.io/assets/img/ayj-circuit.jpg">
+  <meta property="og:image" content="https://ayjtech.github.io/assets/img/ayj-labs-social.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://i.ytimg.com">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <!-- Brand mark, reused in header and footer -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="ayj-mark" viewBox="0 0 108 40">
-      <path fill="currentColor" fill-rule="evenodd" d="M1 38 L19 2 L37 38 Z M13.5 32 L19 21 L24.5 32 Z"/>
-      <path fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" d="M42 2 L55 19 L68 2 M55 19 V38"/>
-      <path fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" d="M100.5 2 V34.5 H76 V25"/>
-      <path fill="none" stroke="var(--bg, #05080d)" stroke-width="1.2" d="M100.5 4 V34.5 H78"/>
+    <symbol id="lamp" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="15.5" fill="#ffc34d" opacity="0.16"/>
+      <circle cx="16" cy="16" r="9.6" fill="#ffc34d" stroke="#f4f7fb" stroke-width="1.6"/>
+      <path d="M9.8 9.8 22.2 22.2M22.2 9.8 9.8 22.2" stroke="#6a4a14" stroke-width="1.5" stroke-linecap="round"/>
     </symbol>
   </svg>
 
@@ -39,9 +39,10 @@
 
   <header class="nav" id="nav">
     <div class="nav__inner wrap">
-      <a class="brand" href="#top" aria-label="AYJ home">
-        <svg class="brand__mark" aria-hidden="true"><use href="#ayj-mark"/></svg>
-        <span class="brand__sub">To Inspire<br>The Curious</span>
+      <a class="brand" href="#top" aria-label="AYJ Labs home">
+        <svg class="brand__lamp" aria-hidden="true"><use href="#lamp"/></svg>
+        <span class="brand__name">AYJ <b>LABS</b></span>
+        <span class="brand__sub">Build. Test.<br>Learn.</span>
       </a>
       <nav class="nav__links" id="nav-links" aria-label="Main">
         <a href="#projects">Projects</a>
@@ -49,7 +50,7 @@
         <a href="#parts">Parts Bin</a>
         <a href="#about">About</a>
       </nav>
-      <a class="btn btn--yt nav__cta" href="https://www.youtube.com/@gauravyashjain?sub_confirmation=1" target="_blank" rel="noopener">
+      <a class="btn btn--yt nav__cta" href="https://www.youtube.com/@ayjlabs?sub_confirmation=1" target="_blank" rel="noopener">
         <span class="led led--red" aria-hidden="true"></span> Subscribe
       </a>
       <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
@@ -64,27 +65,27 @@
       <canvas class="hero__canvas" id="traces" aria-hidden="true"></canvas>
       <div class="hero__inner wrap">
         <div class="hero__copy">
-          <p class="eyebrow"><span class="led led--green" aria-hidden="true"></span> DIY electronics · since 2012</p>
+          <p class="eyebrow"><span class="led led--green" aria-hidden="true"></span> Components · Circuits · DIY builds</p>
           <h1 class="hero__title">
-            Build circuits.<br>
-            <span class="hl">Stay curious.</span>
+            Build. Test.<br>
+            <span class="hl">Learn.</span>
           </h1>
           <p class="hero__lede">
-            AYJ makes easy, step-by-step electronics projects you can build at home with inexpensive components —
+            AYJ Labs makes easy, step-by-step electronics projects you can build at home with inexpensive components —
             sensors, switches, alarms and timers, each with a parts list and circuit diagram.
           </p>
           <div class="hero__cta">
             <a class="btn btn--primary" href="#projects">Explore projects
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn--ghost" href="https://www.youtube.com/@gauravyashjain" target="_blank" rel="noopener">
+            <a class="btn btn--ghost" href="https://www.youtube.com/@ayjlabs" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-yt"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8Z"/><path class="ico-yt__play" d="m10 15 5.2-3L10 9v6Z"/></svg>
               Watch on YouTube
             </a>
           </div>
           <dl class="readout" id="readout">
             <div><dt>Subscribers</dt><dd data-count="20200">20.2K</dd></div>
-            <div><dt>Views</dt><dd data-count="4367306">4.37M</dd></div>
+            <div><dt>Views</dt><dd data-count="4368343">4.37M</dd></div>
             <div><dt>Projects</dt><dd data-count="16">16</dd></div>
             <div><dt>Diagrams</dt><dd data-count="7">7</dd></div>
           </dl>
@@ -156,7 +157,7 @@
           <h2>Circuit Diagrams</h2>
           <span class="sec-head__trace" aria-hidden="true"></span>
         </header>
-        <p class="sec-sub">The schematics AYJ published on Facebook, shown blueprint-style. Open one for the full-size original.</p>
+        <p class="sec-sub">The schematics AYJ Labs published on Facebook, shown blueprint-style. Open one for the full-size original.</p>
         <div class="dgrid" id="dgrid"></div>
         <p class="more"><a href="https://www.facebook.com/media/set/?set=a.337503066371509&type=3" target="_blank" rel="noopener">See the album on Facebook ↗</a></p>
       </div>
@@ -179,12 +180,12 @@
     <section class="section section--alt" id="about">
       <div class="wrap about">
         <div class="about__media">
-          <img src="assets/img/ayj-components.jpg" alt="The AYJ logo over a pile of resistors, capacitors, ICs and wires" width="900" height="900" loading="lazy">
+          <img src="assets/img/ayj-labs-logo.png" alt="AYJ Labs logo: the letters AYJ inside a glowing circuit ring with a lamp symbol on top" width="800" height="800" loading="lazy">
         </div>
         <div class="about__copy">
           <header class="sec-head">
             <span class="ref">D4</span>
-            <h2>About AYJ</h2>
+            <h2>About AYJ Labs</h2>
             <span class="sec-head__trace" aria-hidden="true"></span>
           </header>
           <blockquote class="about__quote">
@@ -193,15 +194,15 @@
             projects at home easily by using inexpensive electronic components.”
           </blockquote>
           <dl class="specs">
-            <div><dt>Channel</dt><dd>Gaurav Yash Jain – AYJ</dd></div>
+            <div><dt>Channel</dt><dd>AYJ Labs · @ayjlabs</dd></div>
             <div><dt>On air since</dt><dd>15 Oct 2012</dd></div>
             <div><dt>Subscribers</dt><dd>20.2K</dd></div>
-            <div><dt>Total views</dt><dd>4,367,306</dd></div>
+            <div><dt>Total views</dt><dd>4,368,343</dd></div>
             <div><dt>Facebook</dt><dd>1.2K followers</dd></div>
-            <div><dt>Motto</dt><dd>To inspire the curious…</dd></div>
+            <div><dt>Formerly</dt><dd>Gaurav Yash Jain – AYJ</dd></div>
           </dl>
           <div class="about__links">
-            <a class="btn btn--yt" href="https://www.youtube.com/@gauravyashjain?sub_confirmation=1" target="_blank" rel="noopener">
+            <a class="btn btn--yt" href="https://www.youtube.com/@ayjlabs?sub_confirmation=1" target="_blank" rel="noopener">
               <span class="led led--red" aria-hidden="true"></span> Subscribe on YouTube
             </a>
             <a class="btn btn--ghost" href="https://www.facebook.com/ayjgauravyashjain" target="_blank" rel="noopener">
@@ -217,15 +218,16 @@
   <footer class="footer">
     <div class="wrap footer__inner">
       <a class="brand" href="#top" aria-label="Back to top">
-        <svg class="brand__mark" aria-hidden="true"><use href="#ayj-mark"/></svg>
+        <svg class="brand__lamp" aria-hidden="true"><use href="#lamp"/></svg>
+        <span class="brand__name">AYJ <b>LABS</b></span>
       </a>
-      <p class="footer__tag mono">To inspire the curious…</p>
+      <p class="footer__tag mono">Build. Test. Learn.</p>
       <nav class="footer__links" aria-label="Social">
-        <a href="https://www.youtube.com/@gauravyashjain" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.youtube.com/@ayjlabs" target="_blank" rel="noopener">YouTube</a>
         <a href="https://www.facebook.com/ayjgauravyashjain" target="_blank" rel="noopener">Facebook</a>
         <a href="#top">Back to top ↑</a>
       </nav>
-      <p class="footer__fine mono dim">© 2012–<span id="year">2026</span> AYJ · Channel stats as of September 2026 · Always take care when working with electricity.</p>
+      <p class="footer__fine mono dim">© 2012–<span id="year">2026</span> AYJ Labs · Channel stats as of October 2026 · Always take care when working with electricity.</p>
     </div>
   </footer>
 
@@ -288,7 +290,7 @@
     </div>
   </dialog>
 
-  <noscript><p class="noscript">This site needs JavaScript to list projects. You can watch every video on <a href="https://www.youtube.com/@gauravyashjain">YouTube</a>.</p></noscript>
+  <noscript><p class="noscript">This site needs JavaScript to list projects. You can watch every video on <a href="https://www.youtube.com/@ayjlabs">YouTube</a>.</p></noscript>
 
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>

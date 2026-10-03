@@ -151,7 +151,7 @@
         var P = poly.map(function (p) { return [p[0] * G + 0.5, p[1] * G + 0.5]; });
         var cum = [0];
         for (var k = 1; k < P.length; k++) cum.push(cum[k - 1] + Math.hypot(P[k][0] - P[k - 1][0], P[k][1] - P[k - 1][1]));
-        paths.push({ p: P, cum: cum, len: cum[cum.length - 1], copper: Math.random() < 0.22, flash: 0 });
+        paths.push({ p: P, cum: cum, len: cum[cum.length - 1], amber: Math.random() < 0.22, flash: 0 });
       }
       // draw static board once
       layer = document.createElement("canvas");
@@ -160,7 +160,7 @@
       l.scale(dpr, dpr);
       l.lineCap = "round"; l.lineJoin = "round";
       paths.forEach(function (t) {
-        l.strokeStyle = t.copper ? "rgba(242,160,78,0.16)" : "rgba(62,224,255,0.13)";
+        l.strokeStyle = t.amber ? "rgba(255,195,77,0.16)" : "rgba(62,224,255,0.13)";
         l.lineWidth = 1.6;
         l.beginPath();
         t.p.forEach(function (pt, i) { i ? l.lineTo(pt[0], pt[1]) : l.moveTo(pt[0], pt[1]); });
@@ -168,7 +168,7 @@
         [t.p[0], t.p[t.p.length - 1]].forEach(function (pt) {
           l.beginPath(); l.arc(pt[0], pt[1], 3.2, 0, Math.PI * 2);
           l.fillStyle = "#05080d"; l.fill();
-          l.strokeStyle = t.copper ? "rgba(242,160,78,0.35)" : "rgba(62,224,255,0.3)"; l.lineWidth = 1.4; l.stroke();
+          l.strokeStyle = t.amber ? "rgba(255,195,77,0.35)" : "rgba(62,224,255,0.3)"; l.lineWidth = 1.4; l.stroke();
         });
       });
       pulses = [];
@@ -202,7 +202,7 @@
         if (pu.s - pu.tail > t.len) { t.flash = 1; pulses.splice(i, 1); spawn(false); continue; }
         var s0 = Math.max(0, pu.s - pu.tail), s1 = Math.min(t.len, pu.s);
         var A = at(t, s0), B = at(t, s1);
-        var col = t.copper ? "242,160,78" : "62,224,255";
+        var col = t.amber ? "255,195,77" : "62,224,255";
         var g = ctx.createLinearGradient(A[0], A[1], B[0], B[1]);
         g.addColorStop(0, "rgba(" + col + ",0)");
         g.addColorStop(1, "rgba(" + col + ",0.95)");
@@ -219,7 +219,7 @@
       ctx.shadowBlur = 0;
       paths.forEach(function (t) {
         if (t.flash <= 0) return;
-        var e = t.p[t.p.length - 1], col = t.copper ? "242,160,78" : "62,224,255";
+        var e = t.p[t.p.length - 1], col = t.amber ? "255,195,77" : "62,224,255";
         ctx.beginPath(); ctx.arc(e[0], e[1], 3.2 + (1 - t.flash) * 6, 0, Math.PI * 2);
         ctx.strokeStyle = "rgba(" + col + "," + (0.7 * t.flash) + ")"; ctx.lineWidth = 1.5; ctx.stroke();
         ctx.beginPath(); ctx.arc(e[0], e[1], 2.4, 0, Math.PI * 2);

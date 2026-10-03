@@ -1,11 +1,11 @@
 # ayjtech.github.io
 
-Website for **AYJ — Gaurav Yash Jain**: easy DIY electronics projects, *to inspire the curious*.
+Website for **AYJ Labs** (formerly *Gaurav Yash Jain – AYJ*): easy DIY electronics projects. *Build. Test. Learn.*
 
 Live at https://ayjtech.github.io/
 
-- Every video from [youtube.com/@gauravyashjain](https://www.youtube.com/@gauravyashjain), each with its parts list
-- Circuit diagrams from the [AYJ Facebook page](https://www.facebook.com/ayjgauravyashjain), shown blueprint-style with the original one tap away
+- Every video from [youtube.com/@ayjlabs](https://www.youtube.com/@ayjlabs), each with its parts list
+- Circuit diagrams from the [AYJ Labs Facebook page](https://www.facebook.com/ayjgauravyashjain), shown blueprint-style with the original one tap away
 - A parts bin: pick a component (BC547, NE555, LDR…) to see every project that uses it
 
 It's a plain static site with no build step, so it runs as-is on GitHub Pages.
@@ -18,7 +18,7 @@ assets/css/style.css    all styles
 assets/js/data.js       ALL content: channel stats, projects, parts, diagrams
 assets/js/main.js       rendering, search/filter, modal, lightbox, hero animation
 assets/diagrams/        circuit diagrams (saved from Facebook)
-assets/img/             brand images
+assets/img/             brand images (logo, YouTube banner, social preview)
 favicon.svg
 .nojekyll               serve files as-is (skip Jekyll)
 ```
