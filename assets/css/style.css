@@ -144,6 +144,7 @@ button { font: inherit; color: inherit; }
 .brand__sub {
   font-family: var(--mono); font-size: 0.62rem; line-height: 1.25; color: var(--dim);
   text-transform: uppercase; letter-spacing: 0.12em; padding-left: 12px; border-left: 1px solid var(--line-2);
+  white-space: nowrap;
 }
 .nav__links { display: flex; gap: 4px; margin-left: auto; }
 .nav__links a {
