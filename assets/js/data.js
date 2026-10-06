@@ -2,7 +2,7 @@
  * AYJ Labs site content.
  * Videos, stats and parts lists come from youtube.com/@ayjlabs;
  * circuit diagrams come from the "Circuit Diagrams" album on facebook.com/ayjgauravyashjain.
- * To add a project, add an entry to `projects` (newest first) — the page builds itself from this file.
+ * To add a project or a Short, add an entry to `projects` or `shorts` (newest first) — the page builds itself from this file.
  *
  * Part fields: q = quantity, n = name as listed, k = parts-bin key (groups the same part across projects).
  */
@@ -16,6 +16,8 @@ window.AYJ = {
       "We are obsessed with the world of electronics and remain intrigued by the mystery involved in it. We created this channel to help others understand how to make interesting electronic projects at home, easily, using inexpensive electronic components.",
     youtube: "https://www.youtube.com/@ayjlabs",
     subscribe: "https://www.youtube.com/@ayjlabs?sub_confirmation=1",
+    shortsUrl: "https://www.youtube.com/@ayjlabs/shorts",
+    instagram: "https://www.instagram.com/ayjlabs/",
     facebook: "https://www.facebook.com/ayjgauravyashjain",
     diagramsAlbum: "https://www.facebook.com/media/set/?set=a.337503066371509&type=3",
     joined: "2012-10-15",
@@ -35,6 +37,18 @@ window.AYJ = {
     { id: "security", label: "Security" },
     { id: "basics", label: "Basics" },
     { id: "workshop", label: "Workshop" }
+  ],
+
+  // YouTube Shorts, newest first. `project` (optional) is the slug of a related project to link to.
+  shorts: [
+    {
+      id: "T2efxTN2M5E",
+      title: "This Tiny Box Controls Your AC 🤯",
+      topic: "How a Relay Works",
+      date: "2026-10-03",
+      length: "0:33",
+      project: "simple-relay-circuit"
+    }
   ],
 
   // Parts-bin groups, in display order. `sym` picks the schematic symbol drawn next to the part.

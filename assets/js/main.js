@@ -104,7 +104,7 @@
         navLinks.forEach(function (a) { a.classList.toggle("is-active", a.getAttribute("href") === "#" + en.target.id); });
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
-    ["projects", "diagrams", "parts", "about"].forEach(function (id) { secObs.observe(document.getElementById(id)); });
+    ["shorts", "projects", "diagrams", "parts", "about"].forEach(function (id) { secObs.observe(document.getElementById(id)); });
   }
 
   /* ------------------------------------------------ hero: live PCB traces */
@@ -280,6 +280,49 @@
       if (k < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
+  })();
+
+  /* -------------------------------------------------------------- shorts */
+  (function shorts() {
+    var rail = $("#shorts-rail"), list = (DATA.shorts || []).slice(0, 8);
+    if (!rail) return;
+    function faceHTML(s, i) {
+      return '<button type="button" class="short__face" aria-label="Play Short: ' + esc(s.title) + '">' +
+        '<img src="https://i.ytimg.com/vi/' + s.id + '/oar2.jpg" alt="" loading="lazy" width="405" height="720">' +
+        (i === 0 ? '<span class="badge badge--ref">Latest</span>' : "") +
+        '<span class="badge badge--len">' + esc(s.length) + "</span>" + PLAY_SVG + "</button>";
+    }
+    rail.innerHTML = list.map(function (s, i) {
+      var p = s.project && bySlug[s.project];
+      return '<article class="short" data-i="' + i + '"><div class="short__frame">' + faceHTML(s, i) + "</div>" +
+        '<div class="short__cap">' + (s.topic ? '<span class="short__topic">' + esc(s.topic) + "</span>" : "") +
+        '<h3 class="short__title">' + esc(s.title) + '</h3><span class="short__date">' + monthYear(s.date) + "</span></div>" +
+        (p ? '<a class="short__link" href="#project/' + p.slug + '">Build it: ' + esc(p.title) + " →</a>" : "") + "</article>";
+    }).join("") +
+      '<a class="short short--more" href="' + DATA.channel.subscribe + '" target="_blank" rel="noopener"><span class="short__frame">' +
+      '<svg class="short__lamp" aria-hidden="true"><use href="#lamp"/></svg>' +
+      '<span class="short__more-title">More Shorts on the way</span>' +
+      '<span class="short__more-sub">Subscribe so you don’t miss the next one ↗</span></span></a>';
+    // portrait thumbnail missing? fall back to the regular one
+    rail.addEventListener("error", function (e) {
+      var img = e.target;
+      if (img.tagName === "IMG" && img.src.indexOf("/oar2.jpg") > -1) img.src = img.src.replace("/oar2.jpg", "/hq720.jpg");
+    }, true);
+    rail.addEventListener("click", function (e) {
+      var face = e.target.closest(".short__face");
+      if (!face) return;
+      // only one Short plays at a time
+      rail.querySelectorAll(".short.is-playing").forEach(function (el) {
+        var j = +el.getAttribute("data-i");
+        el.classList.remove("is-playing");
+        el.querySelector(".short__frame").innerHTML = faceHTML(list[j], j);
+      });
+      var card = face.closest(".short"), s = list[+card.getAttribute("data-i")];
+      card.classList.add("is-playing");
+      card.querySelector(".short__frame").innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + s.id +
+        '?autoplay=1&rel=0&playsinline=1" title="' + esc(s.title) +
+        '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+    });
   })();
 
   /* ------------------------------------------------------------ projects */

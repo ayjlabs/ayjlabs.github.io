@@ -4,6 +4,7 @@ Website for **AYJ Labs** (formerly *Gaurav Yash Jain – AYJ*): easy DIY electro
 
 Live at https://ayjtech.github.io/
 
+- The latest [YouTube Shorts](https://www.youtube.com/@ayjlabs/shorts), playable in place
 - Every video from [youtube.com/@ayjlabs](https://www.youtube.com/@ayjlabs), each with its parts list
 - Circuit diagrams from the [AYJ Labs Facebook page](https://www.facebook.com/ayjgauravyashjain), shown blueprint-style with the original one tap away
 - A parts bin: pick a component (BC547, NE555, LDR…) to see every project that uses it
@@ -53,5 +54,20 @@ Everything on the page is generated from `assets/js/data.js`.
   }
 }
 ```
+
+**Add a new Short:** add an entry at the top of `shorts`:
+
+```js
+{
+  id: "YouTubeVideoId",              // the part after /shorts/
+  title: "This Tiny Box Controls Your AC 🤯",
+  topic: "How a Relay Works",        // optional small label
+  date: "2026-10-03",
+  length: "0:33",
+  project: "simple-relay-circuit"    // optional: slug of a related project to link to
+}
+```
+
+The newest 8 Shorts are shown; the first one gets the "Latest" badge.
 
 Reference numbers (P01, P02…) are assigned by upload order automatically. The channel stats in the hero and About section are in `index.html` as well as in `data.js`; update both when they change.
