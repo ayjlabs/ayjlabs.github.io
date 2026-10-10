@@ -2,11 +2,12 @@
  * To customise a video or Short, copy it into data.js (entries there win over these). */
 window.AYJ_AUTO = {
   "updated": "2026-10-10",
-  "source": "feed",
+  "source": "api",
   "stats": {
     "subscribers": 20200,
     "views": 4370723,
-    "asOf": "2026-10-10"
+    "asOf": "2026-10-10",
+    "videos": 19
   },
   "items": {
     "sx2ZpY5IeQo": {
@@ -14,7 +15,8 @@ window.AYJ_AUTO = {
       "title": "What REALLY Fires a Camera Flash ⚡",
       "topic": "How a Capacitor Works",
       "date": "2026-10-10",
-      "views": 334,
+      "length": "0:35",
+      "views": 347,
       "likes": 11
     },
     "DjJGNiixrmo": {
@@ -22,6 +24,7 @@ window.AYJ_AUTO = {
       "title": "Who Switches Streetlights On? 🌃",
       "topic": "How an LDR Works",
       "date": "2026-10-07",
+      "length": "0:34",
       "views": 507,
       "likes": 7
     },
@@ -30,6 +33,7 @@ window.AYJ_AUTO = {
       "title": "This Tiny Box Controls Your AC 🤯",
       "topic": "How a Relay Works",
       "date": "2026-10-03",
+      "length": "0:34",
       "views": 587,
       "likes": 14
     },
@@ -37,7 +41,8 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "Mobile Phone Detector",
       "date": "2015-09-20",
-      "views": 1182843,
+      "length": "4:33",
+      "views": 1182844,
       "likes": 16377,
       "slug": "mobile-phone-detector",
       "summary": "This Video Will Show You How To Make A Mobile Phone Detector In Easy Steps",
@@ -111,6 +116,7 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "Electronic Dice",
       "date": "2015-05-12",
+      "length": "4:02",
       "views": 241148,
       "likes": 3666,
       "slug": "electronic-dice",
@@ -152,6 +158,7 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "Clap Switch (With Audio)",
       "date": "2014-11-25",
+      "length": "10:09",
       "views": 250159,
       "likes": 1642,
       "slug": "clap-switch-with-audio",
@@ -241,6 +248,7 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "Remote Tester (IR Receiver)",
       "date": "2014-02-04",
+      "length": "6:02",
       "views": 119195,
       "likes": 456,
       "slug": "remote-tester-ir-receiver",
@@ -311,6 +319,7 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "Water Level Indicator",
       "date": "2013-11-17",
+      "length": "7:53",
       "views": 337582,
       "likes": 2174,
       "slug": "water-level-indicator",
@@ -364,6 +373,7 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "Simple Light Sensor",
       "date": "2013-08-15",
+      "length": "4:55",
       "views": 108435,
       "likes": 356,
       "slug": "simple-light-sensor",
@@ -408,7 +418,8 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "Simple Relay Circuit",
       "date": "2013-08-13",
-      "views": 1090702,
+      "length": "7:40",
+      "views": 1090697,
       "likes": 4625,
       "slug": "simple-relay-circuit",
       "summary": "This Video Show You \"How To Make A Simple Circuit Using A Relay\" It Will Also Tell You \"What Is A Relay? & What Is It Used For?\"",
@@ -457,6 +468,7 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "Dark Sensor Using Two Transistors",
       "date": "2013-05-20",
+      "length": "9:00",
       "views": 55200,
       "likes": 239,
       "slug": "dark-sensor-using-two-transistors",
@@ -511,6 +523,7 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "Fume Extractor",
       "date": "2013-03-14",
+      "length": "3:38",
       "views": 2742,
       "likes": 36,
       "slug": "fume-extractor"
@@ -519,6 +532,7 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "LED Basics",
       "date": "2013-03-14",
+      "length": "4:22",
       "views": 2413,
       "likes": 39,
       "slug": "led-basics",
@@ -530,6 +544,7 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "Water Sensor",
       "date": "2013-03-13",
+      "length": "3:07",
       "views": 168665,
       "likes": 725,
       "slug": "water-sensor",
@@ -578,6 +593,7 @@ window.AYJ_AUTO = {
       "kind": "video",
       "title": "Flashing LED Using NE555 IC",
       "date": "2013-03-08",
+      "length": "7:13",
       "views": 86972,
       "likes": 296,
       "slug": "flashing-led-using-ne555-ic",
@@ -631,6 +647,266 @@ window.AYJ_AUTO = {
       ],
       "cats": [
         "ics"
+      ]
+    },
+    "Ua0xwC-Iu5k": {
+      "kind": "video",
+      "title": "Laser Security System",
+      "date": "2013-01-02",
+      "length": "6:24",
+      "views": 157719,
+      "likes": 460,
+      "slug": "laser-security-system",
+      "summary": "This video will show you How To Make A Laser Security System in easy steps.",
+      "parts": [
+        {
+          "q": 1,
+          "n": "2n3904 NPN Transistor",
+          "k": "2N3904"
+        },
+        {
+          "q": 1,
+          "n": "5K Variable Resistor",
+          "k": "POT"
+        },
+        {
+          "q": 1,
+          "n": "1000uF Capacitor",
+          "k": "CAPACITOR"
+        },
+        {
+          "q": 1,
+          "n": "LDR (Light Dependent Resistor)",
+          "k": "LDR"
+        },
+        {
+          "q": 1,
+          "n": "3-12V Siren",
+          "k": "BUZZER"
+        },
+        {
+          "q": 1,
+          "n": "Laser",
+          "k": "LASER"
+        },
+        {
+          "q": 1,
+          "n": "Wires",
+          "k": "WIRE"
+        },
+        {
+          "q": 1,
+          "n": "9V Battery",
+          "k": "BATTERY"
+        },
+        {
+          "q": 1,
+          "n": "9V Battery Clip",
+          "k": "BATTERY"
+        },
+        {
+          "q": 1,
+          "n": "Breadboard",
+          "k": "BREADBOARD"
+        }
+      ],
+      "cats": [
+        "security"
+      ]
+    },
+    "0N9rUYEsx0c": {
+      "kind": "video",
+      "title": "Light Sensor",
+      "date": "2012-12-24",
+      "length": "4:11",
+      "views": 295008,
+      "likes": 723,
+      "slug": "light-sensor",
+      "summary": "This video will show you \"How To Make A Light Sensor\" in very easy steps",
+      "parts": [
+        {
+          "q": 1,
+          "n": "BC547 Transistor",
+          "k": "BC547"
+        },
+        {
+          "q": 2,
+          "n": "270 Ohm Resistor",
+          "k": "RESISTOR"
+        },
+        {
+          "q": 1,
+          "n": "LDR (Light Dependent Resistor)",
+          "k": "LDR"
+        },
+        {
+          "q": 1,
+          "n": "LED (Light Emitting Diode)",
+          "k": "LED"
+        },
+        {
+          "q": 1,
+          "n": "Wires",
+          "k": "WIRE"
+        },
+        {
+          "q": 1,
+          "n": "Breadboard",
+          "k": "BREADBOARD"
+        },
+        {
+          "q": 1,
+          "n": "6V Power Source",
+          "k": "SUPPLY"
+        }
+      ],
+      "cats": [
+        "sensors"
+      ]
+    },
+    "L6avdu2OmgU": {
+      "kind": "video",
+      "title": "Dark Sensor",
+      "date": "2012-12-24",
+      "length": "4:45",
+      "views": 81177,
+      "likes": 244,
+      "slug": "dark-sensor",
+      "summary": "This video will show you \"How To Make A Dark Sensor\" in very easy steps",
+      "parts": [
+        {
+          "q": 1,
+          "n": "BC547 Transistor",
+          "k": "BC547"
+        },
+        {
+          "q": 1,
+          "n": "100K Ohm Resistor",
+          "k": "RESISTOR"
+        },
+        {
+          "q": 1,
+          "n": "470 Ohm Resistor",
+          "k": "RESISTOR"
+        },
+        {
+          "q": 1,
+          "n": "LDR (Light Detecting Resistor)",
+          "k": "LDR"
+        },
+        {
+          "q": 1,
+          "n": "LED (Light Emitting Diode)",
+          "k": "LED"
+        },
+        {
+          "q": 1,
+          "n": "Wires",
+          "k": "WIRE"
+        },
+        {
+          "q": 1,
+          "n": "Breadboard",
+          "k": "BREADBOARD"
+        },
+        {
+          "q": 1,
+          "n": "6V Power Source",
+          "k": "SUPPLY"
+        }
+      ],
+      "cats": [
+        "sensors"
+      ]
+    },
+    "lwoAJHVZVGA": {
+      "kind": "video",
+      "title": "Clap Switch",
+      "date": "2012-12-22",
+      "length": "11:22",
+      "views": 189756,
+      "likes": 501,
+      "slug": "clap-switch",
+      "summary": "Watch Our Latest Video For A Better Tutorial On The Same Project:",
+      "parts": [
+        {
+          "q": 2,
+          "n": "BC547 Transistor",
+          "k": "BC547"
+        },
+        {
+          "q": 2,
+          "n": "0.1 uF Capacitor",
+          "k": "CAPACITOR"
+        },
+        {
+          "q": 1,
+          "n": "100uF Capacitor",
+          "k": "CAPACITOR"
+        },
+        {
+          "q": 1,
+          "n": "1K Resistor",
+          "k": "RESISTOR"
+        },
+        {
+          "q": 1,
+          "n": "4.7K Resistor",
+          "k": "RESISTOR"
+        },
+        {
+          "q": 1,
+          "n": "47K Resistor",
+          "k": "RESISTOR"
+        },
+        {
+          "q": 1,
+          "n": "330 Ohm Resistor",
+          "k": "RESISTOR"
+        },
+        {
+          "q": 1,
+          "n": "470 Ohm Resistor",
+          "k": "RESISTOR"
+        },
+        {
+          "q": 1,
+          "n": "NE555 Chip",
+          "k": "NE555"
+        },
+        {
+          "q": 1,
+          "n": "LED(Light Emmiting Diode)",
+          "k": "LED"
+        },
+        {
+          "q": 1,
+          "n": "Wires",
+          "k": "WIRE"
+        },
+        {
+          "q": 1,
+          "n": "Breadboard",
+          "k": "BREADBOARD"
+        },
+        {
+          "q": 1,
+          "n": "9V Battery",
+          "k": "BATTERY"
+        },
+        {
+          "q": 1,
+          "n": "9V Battery Clip",
+          "k": "BATTERY"
+        },
+        {
+          "q": 1,
+          "n": "Electret Condenser Microphone",
+          "k": "MIC"
+        }
+      ],
+      "cats": [
+        "switching"
       ]
     }
   }
