@@ -1,0 +1,56 @@
+name: Update content from YouTube
+
+# Checks the channel for new videos and Shorts and refreshes assets/js/latest.js.
+# Runs every 3 days; each run commits new uploads and refreshed view counts.
+
+on:
+  schedule:
+    - cron: "17 3 */3 * *" # 03:17 UTC on days 1, 4, 7, … of each month (every 3 days)
+  workflow_dispatch: # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write # commit the refreshed data file
+  pages: write # ask GitHub Pages to rebuild after the commit
+
+concurrency:
+  group: update-content
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch latest uploads and stats
+        env:
+          # Optional. Without it the script uses YouTube's public feed.
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+        run: node scripts/update-content.mjs
+
+      - name: Commit if something changed
+        id: commit
+        run: |
+          if [ -z "$(git status --porcelain -- assets/js/latest.js)" ]; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/js/latest.js
+          git commit -m "Update latest videos and stats from YouTube"
+          git pull --rebase --quiet
+          git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      # Pushes made by a workflow don't always start a Pages build on their own, so request one.
+      - name: Rebuild GitHub Pages
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "::warning::Could not request a Pages build; check Settings → Pages."

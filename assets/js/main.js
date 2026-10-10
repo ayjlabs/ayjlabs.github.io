@@ -2,6 +2,45 @@
   "use strict";
 
   var DATA = window.AYJ;
+  var AUTO = window.AYJ_AUTO || {};
+
+  // Fold in what the scheduled updater found on YouTube (assets/js/latest.js).
+  // Anything written by hand in data.js wins; the updater only adds new uploads and fresher numbers.
+  (function mergeAuto() {
+    var items = AUTO.items || {}, known = {}, slugs = {};
+    DATA.shorts = DATA.shorts || [];
+    DATA.projects.forEach(function (p) {
+      known[p.id] = 1; slugs[p.slug] = 1;
+      var a = items[p.id];
+      if (!a) return;
+      if (typeof a.views === "number") p.views = a.views;
+      if (typeof a.likes === "number") p.likes = a.likes;
+      if (!p.length && a.length) p.length = a.length;
+    });
+    DATA.shorts.forEach(function (s) {
+      known[s.id] = 1;
+      var a = items[s.id];
+      if (a && !s.length && a.length) s.length = a.length;
+    });
+    Object.keys(items).forEach(function (id) {
+      var a = items[id];
+      if (known[id]) return;
+      if (a.kind === "short") {
+        DATA.shorts.push({ id: id, title: a.title, topic: a.topic, date: a.date, length: a.length });
+      } else {
+        var slug = a.slug || id;
+        if (slugs[slug]) slug += "-" + id.slice(0, 5).toLowerCase();
+        slugs[slug] = 1;
+        DATA.projects.push({
+          slug: slug, id: id, title: a.title, date: a.date, length: a.length, views: a.views || 0, likes: a.likes,
+          cats: a.cats || [], summary: a.summary || "", parts: a.parts
+        });
+      }
+    });
+    function newestFirst(x, y) { return (y.date || "").localeCompare(x.date || ""); }
+    DATA.shorts.sort(newestFirst);
+    DATA.projects.sort(newestFirst);
+  })();
   var PROJECTS = DATA.projects;
   var PARTS = DATA.parts;
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -264,6 +303,26 @@
     start();
   })();
 
+  /* ------------------------------------------------------- channel stats */
+  (function stats() {
+    var s = AUTO.stats || {};
+    var values = {
+      subscribers: s.subscribers,
+      views: s.views,
+      projects: PROJECTS.length,
+      diagrams: PROJECTS.filter(function (p) { return p.diagram; }).length
+    };
+    document.querySelectorAll("[data-stat]").forEach(function (el) {
+      var v = values[el.getAttribute("data-stat")];
+      if (typeof v !== "number") return;
+      if (el.hasAttribute("data-count")) { el.setAttribute("data-count", v); el.textContent = v >= 1000 ? compact(v) : String(v); }
+      else el.textContent = el.getAttribute("data-format") === "full" ? v.toLocaleString("en-US") : compact(v);
+    });
+    var asOf = $("#stats-asof");
+    var when = s.asOf || AUTO.updated;
+    if (asOf && when) asOf.textContent = fullDate(when);
+  })();
+
   /* ------------------------------------------------------ hero readout */
   (function readout() {
     var dds = document.querySelectorAll("#readout dd[data-count]");
@@ -290,7 +349,7 @@
       return '<button type="button" class="short__face" aria-label="Play Short: ' + esc(s.title) + '">' +
         '<img src="https://i.ytimg.com/vi/' + s.id + '/oar2.jpg" alt="" loading="lazy" width="405" height="720">' +
         (i === 0 ? '<span class="badge badge--ref">Latest</span>' : "") +
-        '<span class="badge badge--len">' + esc(s.length) + "</span>" + PLAY_SVG + "</button>";
+        (s.length ? '<span class="badge badge--len">' + esc(s.length) + "</span>" : "") + PLAY_SVG + "</button>";
     }
     rail.innerHTML = list.map(function (s, i) {
       var p = s.project && bySlug[s.project];
@@ -363,7 +422,7 @@
         '<img src="' + thumb(p.id) + '" alt="" loading="lazy" width="480" height="360">' +
         '<span class="badge badge--ref">' + p.ref + "</span>" +
         (p.diagram ? '<span class="badge badge--sch" title="Circuit diagram available">' + SCH_SVG + "Schematic</span>" : "") +
-        '<span class="badge badge--len">' + p.length + "</span>" + PLAY_SVG +
+        (p.length ? '<span class="badge badge--len">' + p.length + "</span>" : "") + PLAY_SVG +
       "</div>" +
       '<div class="card__body">' +
         '<h3 class="card__title">' + esc(p.title) + "</h3>" +
@@ -513,12 +572,15 @@
 
   function fillModal(p) {
     current = p;
-    $("#m-ref").textContent = p.ref + " · " + p.cats.map(function (c) { return DATA.categories.filter(function (x) { return x.id === c; })[0].label; }).join(" · ");
+    $("#m-ref").textContent = [p.ref].concat(p.cats.map(function (c) {
+      var d = DATA.categories.filter(function (x) { return x.id === c; })[0];
+      return d ? d.label : c;
+    })).join(" · ");
     $("#m-title").textContent = p.title;
     $("#m-meta").innerHTML =
       "<span><b>" + p.views.toLocaleString("en-US") + "</b> views</span>" +
-      "<span><b>" + p.likes.toLocaleString("en-US") + "</b> likes</span>" +
-      "<span>" + p.length + "</span>" +
+      (typeof p.likes === "number" ? "<span><b>" + p.likes.toLocaleString("en-US") + "</b> likes</span>" : "") +
+      (p.length ? "<span>" + p.length + "</span>" : "") +
       "<span>" + fullDate(p.date) + "</span>";
     $("#m-player").innerHTML = playerHTML(p);
     $("#m-summary").textContent = p.summary;
